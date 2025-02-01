@@ -4,13 +4,13 @@ export const Tabs = ({ tabs, onTabSelected, activeTabId }) => (
       <ul>
         {tabs.map(tab => (
           <li
-            className={tab.id === activeTabId ? 'is-activ' : ''}
+            className={tab.id === activeTabId ? 'is-active' : ''}
+            key={tab.id}
             data-cy="Tab"
           >
             <a
               href={`#${tab.id}`}
               data-cy="TabLink"
-              key={tab.id}
               onClick={() => onTabSelected(tab.id)}
             >
               {tab.title}
